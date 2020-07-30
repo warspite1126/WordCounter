@@ -4,33 +4,46 @@
   font-family: "Roboto", sans-serif;
 }
 
+html,
 body {
   background: #f0f0f0;
-  margin-right: auto;
-  margin-left: auto;
-  width: fit-content;
 }
 
 #container {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  max-height: 1200px;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   margin: 8px;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  align-content: flex-start;
 }
 
 #textArea {
-  margin: auto;
-  padding: 4px;
-  width: 640px;
-  height: 480px;
-  border: solid 1px #3d3d3d;
-  border-radius: 4px;
-  outline: 0;
-  font-size: 16px;
-  background: #f8f8f8;
-  box-sizing: border-box;
   animation-name: focusOutTextArea;
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
+  background: #f8f8f8;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: solid 1px #3d3d3d;
+  font-size: 16px;
+  outline: 0;
+  padding: 4px;
+
+  width: 100%;
+  /* height: 100%; */
+}
+
+@media screen and (max-width: 480px) {
+  #textArea {
+    max-width: 300px;
+    max-height: 400px;
+  }
 }
 
 #textArea:focus {
@@ -38,6 +51,7 @@ body {
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
 }
+
 @keyframes focusOutTextArea {
   0% {
     box-shadow: 0 0 4px #202020;
@@ -56,18 +70,7 @@ body {
   }
 }
 
-#rightBox {
-  display: flex;
-  flex-direction: column;
-  padding-left: 8px;
-}
-
 #title {
-  text-align: center;
-  font-weight: 700;
-  font-size: 20px;
-  padding: 8px;
-  margin-bottom: 8px;
   border-radius: 8px;
   background: linear-gradient(
     180deg,
@@ -76,6 +79,11 @@ body {
     #7a7a7a 90%,
     #7a7a7a 100%
   );
+  font-weight: 700;
+  font-size: 20px;
+  margin: 8px;
+  padding: 8px;
+  text-align: center;
 }
 
 #options div {
@@ -85,38 +93,33 @@ body {
 }
 
 .optionsNumber {
-  padding: 4px;
   font-size: 14px;
   font-weight: 700;
+  padding: 4px;
 }
 
 #counters {
+  border-radius: 8px;
   margin: 8px;
   height: fit-content;
-  border-radius: 8px;
-}
-
-#counters div label {
-  font-size: 16px;
 }
 
 .counter {
-  width: 96px;
-  font-weight: 700;
-  text-align: right;
-  padding: 4px 0.5em;
-  margin: 4px 0;
   box-sizing: border-box;
+  font-weight: 700;
+  margin: 4px 0;
   outline: 0;
+  padding: 4px 0.5em;
+  text-align: right;
+  width: 96px;
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
+  html,body {
     background: #202020;
     color: white;
   }
   #title {
-    /* background: linear-gradient(#073d70, #042340); */
     background: linear-gradient(
       180deg,
       #073d70 0%,
