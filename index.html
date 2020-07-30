@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Word Counter</title>
+</head>
+
+<body>
+    <div id="container">
+        <div>
+            <textarea id="textArea" placeholder="Голод лучший повар." autofocus></textarea>
+        </div>
+        <div id="rightBox">
+            <div id="title">
+                <span>Options</span>
+            </div>
+            <div id="options">
+                <!-- <div>
+                    <input type="checkbox" id="segmentationMode" checked>
+                    <label for="segmentationMode">Segmentation mode</label>
+                </div> -->
+                <div>
+                    <input type="color" id="textColourChanger">
+                    <label for="textColourChanger">Text colour</label>
+                </div>
+                <div>
+                    <input type="range" id="fontSizeSlider" class="optionsSlider" min="1" max="72" value="16">
+                    <input type="number" id="fontSizer" class="optionsNumber" min="1" max="72" value="16">
+                    <label for="fontSizer">px</label>
+                </div>
+            </div>
+            <div id="counters">
+                <div id="wordCountDiv">
+                    <input type="text" id="words" class="counter" value="0" readonly>
+                    <label for="words">words</label>
+                </div>
+                <div id="characterCountDiv">
+                    <input type="text" id="characters" class="counter" value="0" readonly>
+                    <label for="characters">characters</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>

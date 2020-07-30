@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: #f0f0f0;
+  margin-right: auto;
+  margin-left: auto;
+  width: fit-content;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  margin: 8px;
+}
+
+#textArea {
+  margin: auto;
+  padding: 4px;
+  width: 640px;
+  height: 480px;
+  border: solid 1px #3d3d3d;
+  border-radius: 4px;
+  outline: 0;
+  font-size: 16px;
+  background: #f8f8f8;
+  box-sizing: border-box;
+  animation-name: focusOutTextArea;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+#textArea:focus {
+  animation-name: focusTextArea;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+@keyframes focusOutTextArea {
+  0% {
+    box-shadow: 0 0 4px #202020;
+  }
+  100% {
+    box-shadow: 0;
+  }
+}
+
+@keyframes focusTextArea {
+  0% {
+    box-shadow: 0;
+  }
+  100% {
+    box-shadow: 0 0 4px #202020;
+  }
+}
+
+#rightBox {
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+}
+
+#title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    #ec4848 0%,
+    #c51d1d 90%,
+    #7a7a7a 90%,
+    #7a7a7a 100%
+  );
+}
+
+#options div {
+  margin-bottom: 8px;
+  padding: 4px;
+  width: fit-content;
+}
+
+.optionsNumber {
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#counters {
+  margin: 8px;
+  height: fit-content;
+  border-radius: 8px;
+}
+
+#counters div label {
+  font-size: 16px;
+}
+
+.counter {
+  width: 96px;
+  font-weight: 700;
+  text-align: right;
+  padding: 4px 0.5em;
+  margin: 4px 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #202020;
+    color: white;
+  }
+  #title {
+    /* background: linear-gradient(#073d70, #042340); */
+    background: linear-gradient(
+      180deg,
+      #073d70 0%,
+      #042340 90%,
+      #dfdfdf 90%,
+      #dfdfdf 100%
+    );
+  }
+
+  #textArea {
+    background: #333333;
+    color: white;
+  }
+
+  .optionsNumber {
+    background: #3f3f3f;
+    color: white;
+  }
+
+  .counter {
+    background: #3f3f3f;
+    color: white;
+  }
+}
